@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app_project/base/res/styles/app_styles.dart';
+import 'package:ticket_app_project/screens/all_tickets.dart';
 
 class AppDoubleText extends StatelessWidget {
   const AppDoubleText({
@@ -14,15 +15,15 @@ class AppDoubleText extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-      Text(bigText,style:AppStyles.headLineStyle2),
-      InkWell(
-        onTap:(){
-
-      },
-      child:Text(smallText,style:AppStyles.textStyle.copyWith(
-        color: AppStyles.primaryColor
-      ))
-      )
-    ],);
+        Text(bigText, style: AppStyles.headLineStyle2),
+        InkWell(
+          onTap: () => Navigator.pushNamed(context, "all_tickets"),
+          child: Text(
+            smallText,
+            style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),
+          ),
+        ),
+      ],
+    );
   }
 }
